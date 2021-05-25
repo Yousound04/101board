@@ -50,12 +50,17 @@ void main(void)
 
 		//던진 주사위 값을 현재 위치에 적용
 		position += dice;
-		printf("현재위치 : %d\n\n", position);
+		printf("현재위치 : %d, 현재금액 : %lld \n\n", position, money);
 
+		if (position == 20)
+		{
+			printf("재산의 20%를 사회에 기부합니다. \n");
+			money = (long long)(money * 0.8);
+		}
 
 		if (position > 60)
 		{
-			printf("축하합니다. 화성에 도착하셨습니다.");
+			printf("축하합니다. 목적지에 도착하셨습니다. \n");
 			break;
 		}
 
