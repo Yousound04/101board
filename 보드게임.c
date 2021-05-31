@@ -29,13 +29,6 @@ void main(void)
 
 	printf("현재위치 : %d, 현재금액 : %lld \n\n\n", position, money);
 
-	//주사위는 1 ~ 6까지 나오게 설정
-	dice = rand() % 6 + 1;
-	printf("주사위를 던져서 %d가 나왔습니다.\n", dice);
-
-	//던진 주사위 값을 현재 위치에 적용
-	position += dice;
-	printf("현재위치 : %d, 현재금액 : %lld \n\n", position);
 
 	//무한반복
 	while (1)
@@ -52,10 +45,21 @@ void main(void)
 		position += dice;
 		printf("현재위치 : %d, 현재금액 : %lld \n\n", position, money);
 
+		//TEST CODE
+		//position = 59;
+
 		if (position == 20)
 		{
-			printf("재산의 20%를 사회에 기부합니다. \n");
+			printf("기부천사 - *위치 20*에 있을때 재산의 20%%를 사회에 기부합니다. \n");
 			money = (long long)(money * 0.8);
+			printf("현재위치 : %d, 현재금액 : %lld\n\n", position, money);
+		}
+
+		if (position == 59)
+		{
+			printf("위치 59에 있을때, 처음 지점으로 돌아갑니다.");
+			position = 0;
+			printf("현재위치 : %d, 현재금액 : %lld\n\n", position, money);
 		}
 
 		if (position > 60)
