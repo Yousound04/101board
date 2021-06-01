@@ -50,26 +50,36 @@ void main(void)
 
 		switch (position)
 		{
+			//TODO : printf 중복된 코드 제거하기
+			case 10:
+				printf("*위치 10*에 있을때 주사위를 다시 던집니다. \n");
+				getchar();
+				dice = rand() % 6 + 1;
+				money += 100000 * dice;
+				printf("주사위가 %d이(가) 나와서 %d원을 휙득하였습니다. \n" , dice, 100000 * dice);
+				printf("현재위치 : %d, 현재금액 : %lld \n\n", position, money);
+				break;
+
 			case 20:
 				printf("기부천사 - *위치 20*에 있을때 재산의 20%%를 사회에 기부합니다. \n");
 				money = (long long)(money * 0.8);
-				printf("현재위치 : %d, 현재금액 : %lld\n\n", position, money);
+				printf("현재위치 : %d, 현재금액 : %lld \n\n", position, money);
 				break;
 
 			case 30:
 				printf("위치 30에 있을때, 주사위 던진만큼 더 나아갑니다.\n");
 				position += dice;
-				printf("현재위치 : %d, 현재금액 : %lld\n\n", position, money);
+				printf("현재위치 : %d, 현재금액 : %lld \n\n", position, money);
 				break;
 			
 			case 59:
 				printf("위치 59에 있을때, 처음 지점으로 돌아갑니다.");
 				position = 0;
-				printf("현재위치 : %d, 현재금액 : %lld\n\n", position, money);
+				printf("현재위치 : %d, 현재금액 : %lld \n\n", position, money);
 				break;
 		}
 		
-
+		//범위를 지정해야하는 조건에는 switch문이 불가능하다.
 		if (position > 60)
 		{
 			printf("축하합니다. 목적지에 도착하셨습니다. \n");
