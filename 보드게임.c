@@ -49,7 +49,7 @@ void main(void)
 		printf("현재위치 : %d, 현재금액 : %d \n\n", position, money);
 
 		// TEST CODE
-		// position = 10;
+		 position = 49;
 
 		switch (position)
 		{
@@ -72,6 +72,18 @@ void main(void)
 		case 30:
 			printf("*위치 30*에 있을때, 주사위 던진만큼 더 나아갑니다.\n");
 			position += dice;
+			printf("현재위치 : %d, 현재금액 : %d \n\n", position, money);
+			break;
+
+			//3턴동안 움직이지 못함
+		case 49:
+			printf("*위치 49*에 있을때, 3턴 동안 움직일 수 없습니다. \n");
+			for (int i = 1; i <= 3; i++)
+			{
+				getchar();
+				printf("%d 턴입니다.", i);
+			}
+			printf("무인도에 탈출하였습니다. \n");
 			printf("현재위치 : %d, 현재금액 : %d \n\n", position, money);
 			break;
 
