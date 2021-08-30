@@ -1,10 +1,12 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 
 void main(void)
 {
 	int score;
-	printf("Á¡¼ö¸¦ ÀÔ·ÂÇÏ½Ã¿À : ");
+	printf("ì ìˆ˜ë¥¼ ìž…ë ¥í•˜ì‹œì˜¤ : ");
 	scanf("%d", &score);
+
+	if (score > 100 || score < 0)
 
 	if (90 <= score <= 100)
 		printf("A");
